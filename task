@@ -1,0 +1,56 @@
+import java.util.*;
+class chaalika
+{  
+   Scanner scan = new Scanner(System.in);
+   ArrayList <Integer> arr = new ArrayList <Integer> ();
+   
+   void add_element()
+    {
+     System.out.print(" Enter the element you need to add to the list : ");
+     int x=scan.nextInt();
+     arr.add(x);
+    }
+    void display()
+     {
+      if (arr.size()==0) {System.out.println("the list is empty");}
+      else {System.out.println(arr);}
+     }
+    void delete_element()
+     {
+      if (arr.size()==0){System.out.println("list is empty");}
+      else {
+            System.out.print("enter a number to delete : ");
+            int i = scan.nextInt();
+            int f=0;
+            for (int j =0; j<arr.size();j++)
+            {
+              if (arr.get(j)==i) 
+               {
+                  arr.remove(j);
+                  System.out.println(i+"element is deleted from the list");
+                  break;
+               }
+               if (f==0) {System.out.println(i+"is not present in the list");}
+            } 
+           }
+     }
+  public static void main (String args [])
+   {  Scanner sc = new Scanner(System.in);
+     chaalika list = new chaalika();
+     int s =0;
+     while (s==0)
+     {
+      System.out.print("enter letter: ");
+      String choice = sc.nextLine();
+      switch (choice)
+       {
+        case "A" : {list.add_element(); break;}
+        case "B" : {list.display(); break;}
+        case "D" : {list.delete_element(); break;}
+        case "Q" : {s=1; break;}
+       }
+       
+     }
+     System.out.println("end of the program");
+   }
+}
